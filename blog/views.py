@@ -23,7 +23,6 @@ def post_new(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            # return redirect('blog.views.post_detail', post_pk=post.pk)
             return redirect(post_detail, post_pk=post.pk)
     else:
         form = PostForm()
